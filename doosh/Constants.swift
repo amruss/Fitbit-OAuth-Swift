@@ -7,3 +7,8 @@
 //
 
 import Foundation
+let Fitbit =
+[
+    "consumerKey": "ae2f20dafa72fe1ae0e5a06836e7b6a6",
+    "consumerSecret": "a65939032a8d645ca315c5b797d8a4de"
+]

@@ -7,15 +7,24 @@
 //
 
 import UIKit
+import OAuthSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
+    
+    
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
         // Override point for customization after application launch.
+        if (url.host == "oauth-callback") {
+        OAuthSwift.handleOpenURL(url)
+            print("yes called")
+        
+        }
+        
         return true
     }
 
@@ -43,4 +52,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
